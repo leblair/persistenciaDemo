@@ -1,4 +1,3 @@
-import java.sql.*;
 import java.util.Scanner;
 
 import static com.mongodb.client.model.Filters.eq;
@@ -15,8 +14,8 @@ public class Mas {
 
         //patron facade
         //"para hacerlo mas facil"
-        Database.insertarPeliculaSQL(title);
-        Database.insertarPeliculaMongo(title);
+        DatabaseMongo.insertarPeliculaSQL(title);
+        DatabaseMongo.insertarPeliculaMongo(title);
 
 
     }
