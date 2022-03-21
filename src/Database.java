@@ -1,6 +1,9 @@
-public abstract class Database {
+public interface Database {
 
-    abstract void insertar(String title);
+    void insertar(String title);
 
-    abstract void consultar();
+    void consultar();
+    void consultarOne(String title);
+    void deleteAll();
+    void deleteOne(String title);
 }

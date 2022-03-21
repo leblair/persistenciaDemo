@@ -6,10 +6,9 @@ import org.bson.Document;
 
 import java.sql.*;
 
-public class DatabaseMysql extends Database{
+public class DatabaseMysql implements Database{
 
-    @Override
-    void insertar(String title) {
+    public void insertar(String title) {
         String uri = "jdbc:mysql://localhost/mydatabase?user=myuser&password=mypass";
         try (Connection conn = DriverManager.getConnection(uri)) {
             //INSERT
@@ -21,10 +20,11 @@ public class DatabaseMysql extends Database{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
     }
 
-    @Override
-    void consultar() {
+    public void consultar() {
         String uri = "jdbc:mysql://localhost/mydatabase?user=myuser&password=mypass";
 
         try (Connection conn = DriverManager.getConnection(uri)) {
@@ -40,5 +40,20 @@ public class DatabaseMysql extends Database{
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    @Override
+    public void consultarOne(String title) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
+    }
+
+    @Override
+    public void deleteOne(String title) {
+
     }
 }
